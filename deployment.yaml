@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: practice-deployment
+spec:
+  replicas: 2 # one pod on each worker node
+  selector:
+    matchLabels:
+      app: practice-app # flask-app label(2 pods) ==> containers will be automatically created using the appropriate image
+  template:
+    metadata:
+      labels:
+        app: practice-app # Current we have 2 pods
+    spec:
+      containers:
+      - name: practice-app
+        image: aashe1623/practice-image:1.1
+        ports:
+        - containerPort: 5000
