@@ -17,3 +17,6 @@ kind delete cluster --name kind
 
 6. Deployment created:
    kubectl apply -f deployment.yaml
+
+7. Port-forwarding:
+   kubectl port-forward deployment/practice-deployment 5000:5000
