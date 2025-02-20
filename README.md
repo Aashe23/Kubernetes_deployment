@@ -20,3 +20,13 @@ kind delete cluster --name kind
 
 7. Port-forwarding:
    kubectl port-forward deployment/practice-deployment 5000:5000
+
+##For Replication Controller
+1. Create a recplication_controller-deplymnet file
+   kubectl apply -f .\replication-controller_deployment.yaml
+
+2. to check the
+   kubectl get rc
+
+   3. port forwarding:
+      kubectl port-forward rc/nginx-rc 5003:80
